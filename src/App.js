@@ -87,7 +87,7 @@ function App() {
           <Route path='/meat-toppings' element={<MeatToppings pizza={pizza} addMeatToppings={addMeatToppings} />} />
           <Route path='/other-toppings' element={<OtherToppings pizza={pizza} addOtherToppings={addOtherToppings} />} />
           <Route path='/order' element={<Order pizza={pizza} setPizza={setPizza} user={user} setTotal={setTotal} total={total} />} />
-          <Route path='/signup' element={<Signup  />} />
+          <Route path='/signup' element={<Signup setUser={setUser} />} />
           <Route path='/signin' element={<Signin  user={user} setUser={setUser} setTotal={setTotal} pizza={pizza} setPizza={setPizza} />} />
           <Route path='/past-orders' element={<PastOrders setUser={setUser} user={user} pizza={pizza} setPizza={setPizza} setTotal={setTotal}/>} />
           <Route path='/guest-order' element={<GuestOrder pizza={pizza} setPizza={setPizza}/>} />

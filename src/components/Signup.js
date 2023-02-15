@@ -5,7 +5,7 @@ import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/a
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
 import {db} from '../Firebase-config'
 
-const Signup = () => {
+const Signup = ({setUser}) => {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({name: '', email: '', password: ''})
   const {name, email, password} = formData
@@ -28,6 +28,7 @@ const Signup = () => {
         updateProfile(auth.currentUser, {
           displayName: name
         })
+        setUser(userCredential.user.displayName)
   
         const formDataCopy = {...formData}
         delete formDataCopy.password
