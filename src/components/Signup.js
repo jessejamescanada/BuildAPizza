@@ -28,13 +28,15 @@ const Signup = ({setUser}) => {
         updateProfile(auth.currentUser, {
           displayName: name
         })
-        setUser(userCredential.user.displayName)
   
         const formDataCopy = {...formData}
         delete formDataCopy.password
         formDataCopy.timestamp = serverTimestamp()
   
         await setDoc(doc(db, 'users', user.uid), formDataCopy)
+
+        // set display name immediately when user signs up
+        setUser(userCredential.user.displayName)
   
       }catch(err){
         console.log(err)

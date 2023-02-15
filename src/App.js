@@ -31,7 +31,7 @@ function App() {
         setLoggedIn(false)
       }
     })
-  },[])
+  },[auth])
 
   // session storage for pizza
   useEffect(() => {
