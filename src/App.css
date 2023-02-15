@@ -1,38 +1,339 @@
-.App {
+/* reset & common styles */
+body, ul, h1, h2, h3, p, button, a, div{
+  margin: 0;
+  padding: 0;
+  color: white;
+  letter-spacing: 2px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body{
+  background: rgb(255,225,115);
+background: radial-gradient(circle, rgba(255,225,115,1) 0%, rgba(204,135,51,1) 100%);
+  overflow: hidden;
+}
+
+/* header */
+.header-container{
+  display: flex;
+  width: 100%;
+  height: 100px;
+}
+.header-content{
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  font-size: 1.5rem;
+  position: relative;
+}
+.pizza{
+  position: absolute;
+  bottom: -10%;
+  left: 20.5%;
+}
+
+.header-title{
+  cursor: pointer;
+}
+.loggedin-header{
+  cursor: pointer;
+  color: #333030;
+  font-size: 1rem;
+}
+.header-title{
+  border: 1px dashed white;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+/* home */
+.home-container{
+  width: 100%;
+  height: 100vh;
+}
+.home-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 50%;
+}
+.home-btn-container{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-around;
+}
+.home-btn-wrapper{
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+/* base */
+li span.active{
+  font-weight: bold;
+  color: rgb(255, 136, 0);
+}
+
+/* meat toppings */
+.toppings-container{
+  width: 100%;
+}
+.toppings-content{
+  max-width: 300px;
+  margin: 100px auto 40px;
+  height: 340px;
+  position: relative;
+}
+.toppings-content h3{
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.border{
+  border-bottom: 1px solid white;
+  margin-bottom: .6rem;
+}
+.toppings-container ul{
+font-size: 1.2rem;
+  margin: 0rem auto 2rem auto;
+  padding: 0;
+
+}
+.toppings-container ul li{
+  cursor: pointer;
+  list-style: none;
+}
+/* orders */
+.orders-content{
+  max-width: 500px;
+  margin: 100px auto 40px;
+}
+.orders{
+  margin-left: 20px;
+}
+.orders-content h2{
+  margin-bottom: 10px;
+}
+.order-meats , .order-others {
+  display: flex;
+}
+.order-meats ul, .order-others ul{
+  margin: 1rem 0;
+}
+.order-meats ul li, .order-others ul li{
+  margin-right: 10px;
+}
+.order-go-back{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order-go-back button{
+  margin: 0;
+}
+
+.past-orders-container{
+  width: 100%;
+  height: 100%;
+}
+.past-orders-container h3{
   text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.past-orders-content{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 2rem;
+}
+.past-orders-content ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.past-order-li{
+  margin: 15px ;
+  width: 250px;
+  padding: 15px;
+  border-bottom: solid 1px white;
+}
+.past-order-li li{
+  padding: 4px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.spinner{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 60vh;
+  margin: auto;
+  align-items: center;
+}
+
+.pizza-spinner {
+  font-size: 14rem;
+  color: rgb(255, 145, 0);
+}
+
+
+/* button */
+button{
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: transparent;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  margin: 40px 0 auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* opacity: 0.7; */
+}
+.btn-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 5%;
+}
+.header-content button{
+  margin-top: 0;
+}
+
+/* signin */
+.signin-content header{
+  font-size: 2rem;
+}
+.signin-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.signin-content{
+  width: 250px;
+}
+
+.signin-form-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  padding: 2rem 0rem;
+}
+
+.signin-form-container form{
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-form-container input{
+  width: 100%;
+  padding: 8px;
+  border: none;
+  margin: 5px 0px;
+  border-radius: 5px;
+}
+
+.signin-btn-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.signin-btn-container button{
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.password-input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.password-input button{
+  font-size: .6rem;
+  margin: 0;
+}
+
+.signin-form-container button{
+  margin: 10px 0px;
+}
+.signup-instead{
+  display: flex;
+  align-items: center;
+}
+
+.total-profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.total{
+  font-size: 1rem;
+}
+
+@media(max-width: 500px){
+  .toppings-content h3{
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  .toppings-container ul li{
+    text-align: center;
   }
+  .toppings-content{
+    margin-top: 150px;
+  }
+  .orders-content{
+    padding: 20px;
+  }
+
+  .orders-content h2{
+    text-align: center;
+  }
+  .orders-content button{
+    margin-top: 10px;
+  }
+  .order-go-back{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .order-go-back p{
+    margin-bottom: 10px;
+  }
+
+  .home-btn-container{
+    width: 90%;
+  }
+  .header-content{
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .total-profile{
+    margin: 7px 0px;
+  }
+  .next{
+    display: flex;
+    justify-content: center;
+  }
+  .past-orders-container{
+    margin-top: 50px;
+  }
+  .past-orders-container h3{
+    margin-bottom: 0;
+  }
+
 }
